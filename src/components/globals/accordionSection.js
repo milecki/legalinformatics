@@ -28,7 +28,7 @@ class AccordionSection extends Component {
             alt=""
             style={{ width: "50px", height: "50px", marginRight: "14px" }}
           ></img>
-          <h4 style={{ fontSize: "24px", fontWeight: 600 }}>{label}</h4>
+          <h4 style={{ fontSize: "24px", fontWeight: 400 }}>{label}</h4>
           <div style={{ marginLeft: "10px", fontSize: "12px" }}>
             {!isOpen && <span>&#9660;</span>}
             {isOpen && <span>&#9650;</span>}

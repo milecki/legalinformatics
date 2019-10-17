@@ -98,34 +98,23 @@ html {
 }
 
 body {
-  color: rgba(0, 0, 0, 0.87);
-  line-height: 1.4;
-  font-family: "Aller Light";
-
-
   background-color: white;
   background-image: url(${bgPattern});
   background-repeat: repeat;
   background-size: 30%; 
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.4;
+  font-family: "Aller Light";
 }
 
 main {
-  /* because nav's height is 206px on mobile */
-  margin-top: 244px;
-  
-}
-
-@media (min-width: 768px) {
-  main {
-    /* because nav's height is 88px */
-    margin-top: 88px;
-  }
+  margin-top: 73px;
 }
 
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 `
 export default GlobalStyle
