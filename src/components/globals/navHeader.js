@@ -8,7 +8,6 @@ const StyledNavHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.5s ease-in-out;
 `
 
 const Logo = styled.img`
