@@ -95,7 +95,7 @@ export default function contact() {
           />
           <Input
             type="email"
-            name="Email"
+            name="_replyto"
             aria-label="Twój email"
             placeholder="Twój email"
             required="required"
