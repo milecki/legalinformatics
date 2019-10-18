@@ -22,10 +22,7 @@ const Input = styled.input`
   margin-bottom: 15px;
   padding: 6px 12px;
   border: 1px solid #cccccc;
-  /* -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  /* -webkit-transition: border-color ease-in-out 0.15s,
-    box-shadow ease-in-out 0.15s; */
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   color: #555555;
   font-size: 14px;
@@ -34,21 +31,21 @@ const Input = styled.input`
   &:focus {
     border-color: #66afe9;
     outline: 0;
-    /* -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(102, 175, 233, 0.6); */
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(102, 175, 233, 0.6);
   }
 `
+const SuperInput = styled.input`
+  display: none;
+`
+
 const TextArea = styled.textarea`
+  height: 184px;
   flex-basis: 100%;
   margin-bottom: 15px;
   padding: 6px 12px;
   border: 1px solid #cccccc;
-  /* -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  /* -webkit-transition: border-color ease-in-out 0.15s,
-    box-shadow ease-in-out 0.15s; */
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   color: #555555;
   font-size: 14px;
@@ -57,17 +54,14 @@ const TextArea = styled.textarea`
   &:focus {
     border-color: #66afe9;
     outline: 0;
-    /* -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(102, 175, 233, 0.6); */
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(102, 175, 233, 0.6);
   }
 `
-const Button = styled.button`
+const SubmitButton = styled.input`
   flex-basis: 100%;
   padding: 10px 0;
   font-size: 18px;
-  /* -webkit-appearance: none; */
   font-family: "Aller Light", sans-serif;
   line-height: 1.33;
   color: #ffffff;
@@ -86,19 +80,45 @@ export default function contact() {
     <Container>
       <ContactSection id="contact">
         <SectionHeading>Kontakt</SectionHeading>
-        <ContactForm action="">
-          <Input type="text" placeholder="Imię" />
-          <Input type="text" placeholder="Nazwisko" />
-          <Input type="email" placeholder="Twój email" />
-          <Input type="text" placeholder="Temat" />
+        <ContactForm
+          action="https://formspree.io/michal@kulecki.me"
+          method="post"
+        >
+          <input type="hidden" name="_language" value="pl" aria-hidden="true" />
+          <Input type="text" name="Imię" aria-label="Imię" placeholder="Imię" />
+          <Input
+            type="text"
+            name="Nazwisko"
+            aria-label="Nazwisko"
+            placeholder="Nazwisko"
+            required="required"
+          />
+          <Input
+            type="email"
+            name="Email"
+            aria-label="Twój email"
+            placeholder="Twój email"
+            required="required"
+          />
+          <Input
+            type="text"
+            name="Temat"
+            aria-label="Temat"
+            placeholder="Temat"
+          />
+          <SuperInput
+            type="text"
+            name="_gotcha"
+            placeholder="Dodatkowe informacje"
+            aria-hidden="true"
+          />
           <TextArea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
+            name="Treść wiadomości"
+            aria-label="Treść wiadomości"
             placeholder="Treść wiadomości"
+            required="required"
           ></TextArea>
-          <Button type="submit">Wyślij</Button>{" "}
+          <SubmitButton type="submit" value="Wyślij"></SubmitButton>
         </ContactForm>
       </ContactSection>
     </Container>
