@@ -23,16 +23,16 @@ const Input = styled.input`
   padding: 6px 12px;
   border: 1px solid #cccccc;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   color: #555555;
   font-size: 14px;
   font-family: "Aller Light", sans-serif;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
   &:focus {
     border-color: #66afe9;
-    outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0;
   }
 `
 const SuperInput = styled.input`
@@ -46,28 +46,28 @@ const TextArea = styled.textarea`
   padding: 6px 12px;
   border: 1px solid #cccccc;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   color: #555555;
   font-size: 14px;
   font-family: "Aller Light", sans-serif;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
   &:focus {
     border-color: #66afe9;
-    outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0;
   }
 `
 const SubmitButton = styled.input`
   flex-basis: 100%;
   padding: 10px 0;
-  font-size: 18px;
-  font-family: "Aller Light", sans-serif;
-  line-height: 1.33;
-  color: #ffffff;
   background-color: #428bca;
   border-color: #357ebd;
   cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Aller Light", sans-serif;
+  line-height: 1.33;
 
   &:hover {
     background-color: #3276b1;
@@ -84,7 +84,7 @@ export default function contact() {
           action="https://formspree.io/michal@kulecki.me"
           method="post"
         >
-          <input type="hidden" name="_language" value="pl" aria-hidden="true" />
+          <input type="hidden" name="_language" value="pl" />
           <Input type="text" name="Imię" aria-label="Imię" placeholder="Imię" />
           <Input
             type="text"

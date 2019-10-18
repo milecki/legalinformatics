@@ -1,19 +1,9 @@
 import React from "react"
-// import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import PageHeading from "../globals/pageHeading"
 
-// const StyledBackgroundImage = styled(BackgroundImage)`
-//   /* .defaultBackground {
-//     min-height: 100vh;
-//     margin-top: 500px;
-//     display: block;
-//   } */
-// `
-
 const style = {
-  // minHeight: "60vh",
-  height: 450,
+  height: "450px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

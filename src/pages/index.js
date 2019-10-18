@@ -1,19 +1,13 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
-// import Container from "../components/globals/container"
-
 import BackgroundSection from "../components/globals/backgroundSection"
 import Offer from "../components/home/offer"
 import TrustedBy from "../components/home/trustedBy"
 import Management from "../components/home/management"
 import Contact from "../components/home/contact"
 import PageHeading from "../components/globals/pageHeading"
-// import SectionHeading from "../components/globals/sectionHeading"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -27,17 +21,17 @@ const IndexPage = ({ data }) => (
     </BackgroundSection>
     <Offer />
     <BackgroundSection
-      img={data.foto1.childImageSharp.fluid}
+      img={data.szermierz.childImageSharp.fluid}
       styleClass="defaultBackground"
     />
     <TrustedBy />
     <BackgroundSection
-      img={data.foto2.childImageSharp.fluid}
+      img={data.zegar.childImageSharp.fluid}
       styleClass="defaultBackground"
     />
     <Management />
     <BackgroundSection
-      img={data.foto3.childImageSharp.fluid}
+      img={data.hala_stulecia.childImageSharp.fluid}
       styleClass="defaultBackground"
     />
     <Contact />
@@ -53,21 +47,21 @@ export const query = graphql`
         }
       }
     }
-    foto1: file(relativePath: { eq: "foto1.jpg" }) {
+    szermierz: file(relativePath: { eq: "szermierz.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    foto2: file(relativePath: { eq: "foto2.jpg" }) {
+    zegar: file(relativePath: { eq: "zegar.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    foto3: file(relativePath: { eq: "foto3.jpg" }) {
+    hala_stulecia: file(relativePath: { eq: "hala-stulecia.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

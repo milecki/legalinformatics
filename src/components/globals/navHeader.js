@@ -2,7 +2,7 @@ import React from "react"
 import MenuToggler from "./menuToggler"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logo from "../../images/logo3.svg"
+import logo from "../../images/logo.svg"
 
 const StyledNavHeader = styled.div`
   display: flex;

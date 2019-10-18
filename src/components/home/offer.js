@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-
 import Container from "../globals/container"
 import Accordion from "../globals/accordion"
 import SectionHeading from "../globals/sectionHeading"
-
 import wsKonferencje from "../../images/ws-konferencje-i-szkolenia.png"
 import wsSystemy from "../../images/ws-systemy-teleinformatyczne.png"
 import wsWarsztaty from "../../images/ws-warsztaty.png"
@@ -20,18 +18,18 @@ import apKonferencje from "../../images/ap-konferencje-i-szkolenia.png"
 import apSystemy from "../../images/ap-systemy-teleinformatyczne.png"
 
 const OfferSection = styled.section`
-  padding: 80px 0 120px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 80px 0 120px;
 `
 
 const CategoryTitle = styled.h3`
+  width: 100%;
+  padding: 40px 120px 0;
   color: #1e7cc1;
   font-size: 32px;
-  padding: 40px 120px 0;
   text-align: center;
-  width: 100%;
 `
 
 const Category = styled.div`
@@ -53,9 +51,9 @@ const ServiceList = styled.ul`
 const Service = styled.div``
 
 const ServiceDescription = styled.div`
-  font-size: 16px;
   margin: -2px 0 10px;
   padding: 0 0 10px;
+  font-size: 16px;
 `
 
 const DescriptionParagraph = styled.p`

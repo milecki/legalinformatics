@@ -20,10 +20,10 @@ const StyledDiv = styled.div`
 `
 
 const StyledSpan = styled.span`
+  position: relative;
   display: inline-block;
   padding: 0 25px;
   background-color: #ffffff;
-  position: relative;
   top: -13px;
   left: initial;
 `

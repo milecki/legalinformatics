@@ -8,7 +8,6 @@ const Footer = styled.footer`
   background-color: #f8f8f8;
 `
 const FooterContainer = styled.div`
-  /* width: 960px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -18,8 +17,8 @@ const FooterContainer = styled.div`
   grid-gap: 100px;
 `
 const FooterCol = styled.div`
-  padding: 0 15px;
   margin: 0 0 10px;
+  padding: 0 15px;
 
   .copy {
     margin-top: 10px;
@@ -38,8 +37,8 @@ const FooterParagraph = styled.p`
 `
 
 const FooterLink = styled.a`
-  text-decoration: none;
   color: #1e7cc1;
+  text-decoration: none;
 `
 
 export default function footer() {

@@ -4,8 +4,8 @@ import styled from "styled-components"
 
 const LinkList = styled.ul`
   height: ${props => props.ulHeight};
-  transition: height 0.2s ease-in-out;
   overflow: hidden;
+  transition: height 0.2s ease-in-out;
 
   @media (min-width: 768px) {
     display: flex;

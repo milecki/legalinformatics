@@ -23,14 +23,14 @@ const MemberPhoto = styled.img`
 `
 
 const MemberName = styled.h3`
+  margin: 10px 0;
   font-size: 18px;
   font-weight: 500;
-  margin: 10px 0;
 `
 
 const MemberVocationalTitle = styled.p`
-  font-size: 14px;
   margin-bottom: 2px;
+  font-size: 14px;
 `
 
 const MemberRole = styled.p`
