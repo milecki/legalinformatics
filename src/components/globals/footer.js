@@ -9,16 +9,20 @@ const Footer = styled.footer`
 `
 const FooterContainer = styled.div`
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: 2;
-  justify-items: center;
-  justify-content: center;
-  grid-gap: 100px;
+
+  @media (min-width: 640px) {
+    display: grid;
+
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 2;
+    justify-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+  }
 `
 const FooterCol = styled.div`
   margin: 0 0 10px;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 
   .copy {
     margin-top: 10px;

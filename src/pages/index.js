@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/globals/backgroundSection"
+// import Offer from "../components/home/offer"
 import Offer from "../components/home/offer"
 import TrustedBy from "../components/home/trustedBy"
 import Management from "../components/home/management"
 import Contact from "../components/home/contact"
-import PageHeading from "../components/globals/pageHeading"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,25 +15,15 @@ const IndexPage = ({ data }) => (
     <BackgroundSection
       img={data.bgImg.childImageSharp.fluid}
       title="Legal Informatics"
-      styleClass="defaultBackground"
-    >
-      <PageHeading>You have a right to know how</PageHeading>
-    </BackgroundSection>
+      slogan="You have a right to know how"
+      styleClass="hero"
+    ></BackgroundSection>
     <Offer />
-    <BackgroundSection
-      img={data.szermierz.childImageSharp.fluid}
-      styleClass="defaultBackground"
-    />
+    <BackgroundSection img={data.szermierz.childImageSharp.fluid} />
     <TrustedBy />
-    <BackgroundSection
-      img={data.zegar.childImageSharp.fluid}
-      styleClass="defaultBackground"
-    />
+    <BackgroundSection img={data.zegar.childImageSharp.fluid} />
     <Management />
-    <BackgroundSection
-      img={data.hala_stulecia.childImageSharp.fluid}
-      styleClass="defaultBackground"
-    />
+    <BackgroundSection img={data.hala_stulecia.childImageSharp.fluid} />
     <Contact />
   </Layout>
 )

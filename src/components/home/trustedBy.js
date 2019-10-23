@@ -9,18 +9,46 @@ import neurosoft from "../../images/neurosoft.png"
 import szydlo from "../../images/szydlo.png"
 
 const TrustedBySection = styled.section`
-  padding: 80px 0 120px;
+  padding: 50px 0 50px;
   background-color: white;
+
+  @media (min-width: 768px) {
+    padding: 80px 0 120px;
+  }
 `
 
 const Partners = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 const Partner = styled.img`
-  margin: 40px 15px 0px;
+  margin: 60px 0px 0px;
+
+  @media (min-width: 768px) {
+    margin: 40px 40px 0px;
+  }
+
+  @media (min-width: 1136px) {
+    margin: 40px 20px 0px;
+  }
+
+  &[alt="Kancelaria prawna Prof. Szydło i Współpracownicy"] {
+    width: 80%;
+    height: 80%;
+
+    @media (min-width: 375px) {
+      width: initial;
+      height: initial;
+    }
+  }
 `
 
 export default function trustedBy() {
@@ -29,13 +57,13 @@ export default function trustedBy() {
       <Container>
         <SectionHeading>Zaufali nam</SectionHeading>
         <Partners>
+          <Partner height="60" src={kghm} alt="KGHM" />
+          <Partner height="60" src={neurosoft} alt="Neurosoft" />
           <Partner
             height="30"
             src={szydlo}
             alt="Kancelaria prawna Prof. Szydło i Współpracownicy"
           />
-          <Partner height="60" src={kghm} alt="KGHM" />
-          <Partner height="60" src={neurosoft} alt="Neurosoft" />
           <Partner height="60" src={exlege} alt="Ex Lege" />
           <Partner
             height="60"

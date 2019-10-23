@@ -1,65 +1,64 @@
 import React, { Component } from "react"
-import AccordionSection from "../globals/accordionSection"
+import styled from "styled-components"
+
+const OuterDiv = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+`
+
+const ServiceIcon = styled.img`
+  width: 45px;
+  height: 45px;
+  margin-right: 14px;
+`
+
+const ServiceName = styled.h4`
+  font-size: 20px;
+  font-weight: 400;
+`
+const ArrowIcon = styled.div`
+  margin-left: 10px;
+  font-size: 12px;
+`
+
+const InnerDiv = styled.div`
+  margin-top: 20px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  /* transition: all 1s ease; */
+`
 
 class Accordion extends Component {
-  constructor(props) {
-    super(props)
-
-    const openSections = {}
-
-    this.props.children.forEach(child => {
-      if (child.props.isOpen) {
-        openSections[child.props.label] = true
-      }
-    })
-
-    this.state = { openSections }
+  onClick = () => {
+    this.props.onClick(this.props.label)
   }
 
-  onClick = label => {
-    const {
-      props: { allowMultipleOpen },
-      state: { openSections },
-    } = this
-
-    const isOpen = !!openSections[label]
-
-    if (allowMultipleOpen) {
-      this.setState({
-        openSections: {
-          ...openSections,
-          [label]: !isOpen,
-        },
-      })
-    } else {
-      this.setState({
-        openSections: {
-          [label]: !isOpen,
-        },
-      })
-    }
-  }
-
-  render() {
+  render(props) {
     const {
       onClick,
-      props: { children },
-      state: { openSections },
+      props: { isOpen, label, imgSrc },
     } = this
 
     return (
       <div>
-        {children.map(child => (
-          <AccordionSection
-            isOpen={!!openSections[child.props.label]}
-            label={child.props.label}
-            onClick={onClick}
-            imgSrc={child.props.imgSrc}
-            key={child.props.imgSrc}
-          >
-            {child.props.children}
-          </AccordionSection>
-        ))}
+        <OuterDiv onClick={onClick}>
+          <ServiceIcon src={imgSrc} alt=""></ServiceIcon>
+          <ServiceName>{label}</ServiceName>
+          <ArrowIcon>
+            {!isOpen && <span>&#9660;</span>}
+            {isOpen && <span>&#9650;</span>}
+          </ArrowIcon>
+        </OuterDiv>
+        {isOpen && (
+          <InnerDiv>
+            <div style={{ transition: "all 2s ease-in" }}>
+              {this.props.children}
+            </div>
+          </InnerDiv>
+        )}
       </div>
     )
   }

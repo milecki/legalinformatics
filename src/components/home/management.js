@@ -6,16 +6,29 @@ import adam from "../../images/adam-hareza.jpg"
 import igor from "../../images/igor-bialowas.jpg"
 
 const Management = styled.section`
-  padding: 80px 0 120px;
+  padding: 50px 0 50px;
+
+  @media (min-width: 768px) {
+    padding: 80px 0 120px;
+  }
 `
 
 const Members = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 const Member = styled.div`
-  margin: 20px 30px 0;
+  margin: 20px;
   text-align: center;
+
+  @media (min-width: 768px) {
+    margin: 20px 30px 0;
+  }
 `
 
 const MemberPhoto = styled.img`

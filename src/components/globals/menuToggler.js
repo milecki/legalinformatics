@@ -18,7 +18,7 @@ const MenuTogglerIcon = styled.div`
     color: #333333;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `

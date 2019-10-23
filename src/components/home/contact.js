@@ -4,7 +4,11 @@ import Container from "../globals/container"
 import SectionHeading from "../globals/sectionHeading"
 
 const ContactSection = styled.section`
-  padding: 80px 0 120px;
+  padding: 50px 0 50px;
+
+  @media (min-width: 768px) {
+    padding: 80px 0 120px;
+  }
 `
 
 const ContactForm = styled.form`
@@ -18,7 +22,7 @@ const ContactForm = styled.form`
 `
 const Input = styled.input`
   height: 34px;
-  flex-basis: 48%;
+  flex-basis: 100%;
   margin-bottom: 15px;
   padding: 6px 12px;
   border: 1px solid #cccccc;
@@ -33,6 +37,10 @@ const Input = styled.input`
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(102, 175, 233, 0.6);
     outline: 0;
+  }
+
+  @media (min-width: 386px) {
+    flex-basis: 48%;
   }
 `
 const SuperInput = styled.input`

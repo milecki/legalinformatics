@@ -6,7 +6,7 @@ const StyledDiv = styled.div`
   text-align: center;
   width: 80%;
   height: 2px;
-  margin: 20px auto 50px;
+  margin: 20px auto 30px;
   background: linear-gradient(
     to right,
     #ffffff 0%,
@@ -17,6 +17,9 @@ const StyledDiv = styled.div`
     #299cd7 75%,
     #ffffff 100%
   );
+  @media (min-width: 768px) {
+    margin: 20px auto 50px;
+  }
 `
 
 const StyledSpan = styled.span`

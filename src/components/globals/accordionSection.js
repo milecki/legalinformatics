@@ -1,50 +1,65 @@
 import React, { Component } from "react"
+import Accordion from "./accordion"
 
 class AccordionSection extends Component {
-  onClick = () => {
-    this.props.onClick(this.props.label)
+  constructor(props) {
+    super(props)
+
+    const openSections = {}
+
+    this.props.children.forEach(child => {
+      if (child.props.isOpen) {
+        openSections[child.props.label] = true
+      }
+    })
+
+    this.state = { openSections }
   }
 
-  render(props) {
+  onClick = label => {
+    const {
+      props: { allowMultipleOpen },
+      state: { openSections },
+    } = this
+
+    const isOpen = !!openSections[label]
+
+    if (allowMultipleOpen) {
+      this.setState({
+        openSections: {
+          ...openSections,
+          [label]: !isOpen,
+        },
+      })
+    } else {
+      this.setState({
+        openSections: {
+          [label]: !isOpen,
+        },
+      })
+    }
+  }
+
+  render() {
     const {
       onClick,
-      props: { isOpen, label, imgSrc },
+      props: { children },
+      state: { openSections },
     } = this
 
     return (
       <div>
-        <div
-          onClick={onClick}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "10px",
-            marginTop: "30px",
-          }}
-        >
-          <img
-            src={imgSrc}
-            alt=""
-            style={{ width: "50px", height: "50px", marginRight: "14px" }}
-          ></img>
-          <h4 style={{ fontSize: "24px", fontWeight: 400 }}>{label}</h4>
-          <div style={{ marginLeft: "10px", fontSize: "12px" }}>
-            {!isOpen && <span>&#9660;</span>}
-            {isOpen && <span>&#9650;</span>}
-          </div>
-        </div>
-        {isOpen && (
-          <div
-            style={{
-              marginBottom: "40px",
-              marginLeft: "64px",
-              lineHeight: 1.6,
-            }}
+        {children.map(child => (
+          <Accordion
+            isOpen={!!openSections[child.props.label]}
+            label={child.props.label}
+            onClick={onClick}
+            imgSrc={child.props.imgSrc}
+            key={child.props.imgSrc}
           >
-            {this.props.children}
-          </div>
-        )}
+            {child.props.children}
+          </Accordion>
+        ))}
       </div>
     )
   }
