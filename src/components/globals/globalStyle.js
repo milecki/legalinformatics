@@ -95,6 +95,7 @@ section {
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -108,7 +109,7 @@ body {
 }
 
 main {
-  margin-top: 73px;
+  margin-top: 63.5px;
 }
 
 ul {

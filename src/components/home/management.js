@@ -6,9 +6,11 @@ import adam from "../../images/adam-hareza.jpg"
 import igor from "../../images/igor-bialowas.jpg"
 
 const Management = styled.section`
-  padding: 50px 0 50px;
+  margin-top: -50px;
+  padding: 60px 0 50px;
 
   @media (min-width: 768px) {
+    margin-top: inherit;
     padding: 80px 0 120px;
   }
 `

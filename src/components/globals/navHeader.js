@@ -12,7 +12,7 @@ const StyledNavHeader = styled.div`
 
 const Logo = styled.img`
   display: block;
-  width: 110px;
+  width: 90px;
   box-sizing: content-box;
   padding: 10px 15px;
 `

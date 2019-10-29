@@ -55,7 +55,7 @@ class AccordionSection extends Component {
             label={child.props.label}
             onClick={onClick}
             imgSrc={child.props.imgSrc}
-            key={child.props.imgSrc}
+            key={child.props.label}
           >
             {child.props.children}
           </Accordion>

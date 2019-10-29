@@ -9,10 +9,12 @@ import neurosoft from "../../images/neurosoft.png"
 import szydlo from "../../images/szydlo.png"
 
 const TrustedBySection = styled.section`
-  padding: 50px 0 50px;
+  margin-top: -50px;
+  padding: 60px 0 50px;
   background-color: white;
 
   @media (min-width: 768px) {
+    margin-top: inherit;
     padding: 80px 0 120px;
   }
 `

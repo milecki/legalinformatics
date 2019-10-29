@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import posed, { PoseGroup } from "react-pose"
 
 const OuterDiv = styled.div`
   cursor: pointer;
@@ -7,6 +8,11 @@ const OuterDiv = styled.div`
   align-items: center;
   margin-bottom: 10px;
   margin-top: 30px;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #1e7cc1;
+  }
 `
 
 const ServiceIcon = styled.img`
@@ -16,20 +22,44 @@ const ServiceIcon = styled.img`
 `
 
 const ServiceName = styled.h4`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
 `
 const ArrowIcon = styled.div`
   margin-left: 10px;
   font-size: 12px;
+
+  span {
+    display: block;
+    transform: ${props => (props.isOpen ? "rotate(180deg)" : "")};
+    transform-origin: center center;
+    transition: transform 0.2s ease-in-out;
+  }
 `
 
-const InnerDiv = styled.div`
-  margin-top: 20px;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  /* transition: all 1s ease; */
-`
+const InnerDiv = posed.div({
+  enter: {
+    opacity: 1,
+    y: 0,
+    delay: 100,
+    transition: { duration: 300 },
+  },
+  exit: {
+    opacity: 0,
+    y: "-15%",
+    transition: { duration: 300 },
+  },
+  flip: {
+    transition: {
+      duration: 0,
+      type: "tween",
+    },
+  },
+})
 
 class Accordion extends Component {
   onClick = () => {
@@ -39,26 +69,23 @@ class Accordion extends Component {
   render(props) {
     const {
       onClick,
-      props: { isOpen, label, imgSrc },
+      props: { isOpen, label, imgSrc, id },
     } = this
 
     return (
       <div>
-        <OuterDiv onClick={onClick}>
+        <OuterDiv onClick={onClick} key={id}>
           <ServiceIcon src={imgSrc} alt=""></ServiceIcon>
           <ServiceName>{label}</ServiceName>
           <ArrowIcon>
-            {!isOpen && <span>&#9660;</span>}
-            {isOpen && <span>&#9650;</span>}
+            <span>&#9660;</span>
           </ArrowIcon>
         </OuterDiv>
-        {isOpen && (
-          <InnerDiv>
-            <div style={{ transition: "all 2s ease-in" }}>
-              {this.props.children}
-            </div>
-          </InnerDiv>
-        )}
+        <PoseGroup>
+          {isOpen && (
+            <InnerDiv key="posedInnerDiv">{this.props.children}</InnerDiv>
+          )}
+        </PoseGroup>
       </div>
     )
   }

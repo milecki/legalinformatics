@@ -23,6 +23,7 @@ const categories = [
     services: [
       {
         name: "Systemy teleinformatyczne",
+        id: 1,
         isOpen: true,
         imgSrc: wsSystemy,
         paragraphs: [
@@ -50,6 +51,7 @@ const categories = [
       },
       {
         name: "Warsztaty",
+        id: 2,
         isOpen: false,
         imgSrc: wsWarsztaty,
         paragraphs: [
@@ -58,6 +60,7 @@ const categories = [
       },
       {
         name: "Konferencje i szkolenia",
+        id: 3,
         isOpen: false,
         imgSrc: wsKonferencje,
         paragraphs: [
@@ -83,6 +86,7 @@ const categories = [
     services: [
       {
         name: "Usługi wydawnicze",
+        id: 4,
         isOpen: false,
         imgSrc: szUslugi,
         paragraphs: [
@@ -103,6 +107,7 @@ const categories = [
       },
       {
         name: "Konferencje i szkolenia",
+        id: 5,
         isOpen: false,
         imgSrc: szKonferencje,
         paragraphs: [
@@ -126,6 +131,7 @@ const categories = [
       },
       {
         name: "Systemy teleinformatyczne",
+        id: 6,
         isOpen: false,
         imgSrc: szSystemy,
         paragraphs: [
@@ -160,6 +166,7 @@ const categories = [
     services: [
       {
         name: "Informatyka prawnicza",
+        id: 7,
         isOpen: false,
         imgSrc: bInformatyka,
         paragraphs: [
@@ -180,6 +187,7 @@ const categories = [
       },
       {
         name: "Systemy teleinformatyczne",
+        id: 8,
         isOpen: false,
         imgSrc: bSystemy,
         paragraphs: [
@@ -208,6 +216,7 @@ const categories = [
       },
       {
         name: "Depozyt Kodu Źródłowego",
+        id: 9,
         isOpen: false,
         imgSrc: bDepozyt,
         paragraphs: [
@@ -219,6 +228,7 @@ const categories = [
       },
       {
         name: "Konferencje i szkolenia",
+        id: 10,
         isOpen: false,
         imgSrc: bKonferencje,
         paragraphs: [
@@ -246,6 +256,7 @@ const categories = [
     services: [
       {
         name: "e-Administracja",
+        id: 11,
         isOpen: false,
         imgSrc: apEadministracja,
         paragraphs: [
@@ -269,6 +280,7 @@ const categories = [
       },
       {
         name: "Systemy teleinformatyczne",
+        id: 12,
         isOpen: false,
         imgSrc: apSystemy,
         paragraphs: [
@@ -299,6 +311,7 @@ const categories = [
       },
       {
         name: "Konferencje i szkolenia",
+        id: 13,
         isOpen: false,
         imgSrc: apKonferencje,
         paragraphs: [
@@ -341,15 +354,19 @@ const OfferSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 50px 0 50px;
+  margin-top: -50px;
+  padding: 60px 0 50px;
 
   @media (min-width: 768px) {
+    margin-top: inherit;
     padding: 80px 0 120px;
   }
 `
+const CategoryWrapper = styled.div`
+  width: 100%;
+`
 
 const CategoryTitle = styled.h3`
-  width: 100%;
   padding: 40px 0 0;
   color: #1e7cc1;
   font-size: 24px;
@@ -386,8 +403,6 @@ const ServiceList = styled.ul`
 
 const ServiceOuterDiv = styled.div``
 
-const ServiceInnerDiv = styled.div``
-
 const ServiceDescription = styled.div`
   margin: -2px 0 10px;
   padding: 0 0 10px;
@@ -400,13 +415,16 @@ const ServiceDescription = styled.div`
 
 const DescriptionParagraph = styled.p`
   margin-top: 10px;
+  line-height: 1.6;
 `
 
 const DescriptionListIntro = styled.p`
   margin-top: 20px;
 `
 
-const DescriptionList = styled.ul``
+const DescriptionList = styled.ul`
+  line-height: 1.6;
+`
 
 const DescriptionListItem = styled.li`
   margin-top: 10px;
@@ -417,51 +435,50 @@ function OfferCategories() {
     <>
       {categories.map(category => {
         return (
-          <>
+          <CategoryWrapper key={category.categoryName}>
             <CategoryTitle>{category.categoryName}</CategoryTitle>
-            <div>
-              <Category>
-                <ServiceList>
-                  <AccordionSection allowMultipleOpen>
-                    {category.services.map(service => (
-                      <ServiceOuterDiv
-                        imgSrc={service.imgSrc}
-                        label={service.name}
-                        isOpen={service.isOpen}
-                      >
-                        <ServiceInnerDiv>
-                          <ServiceDescription>
-                            {service.paragraphs &&
-                              service.paragraphs.map(paragraph => (
-                                <DescriptionParagraph>
-                                  {paragraph}
-                                </DescriptionParagraph>
-                              ))}
+            <Category>
+              <ServiceList>
+                <AccordionSection allowMultipleOpen>
+                  {category.services.map(service => (
+                    <ServiceOuterDiv
+                      imgSrc={service.imgSrc}
+                      label={service.name}
+                      isOpen={service.isOpen}
+                      key={service.id}
+                    >
+                      <div style={{ marginTop: "20px", marginBottom: "40px" }}>
+                        <ServiceDescription>
+                          {service.paragraphs &&
+                            service.paragraphs.map((paragraph, index) => (
+                              <DescriptionParagraph key={index}>
+                                {paragraph}
+                              </DescriptionParagraph>
+                            ))}
 
-                            {service.lists &&
-                              service.lists.map(list => (
-                                <div>
-                                  <DescriptionListIntro>
-                                    {list.intro}
-                                  </DescriptionListIntro>
-                                  <DescriptionList>
-                                    {list.items.map(item => (
-                                      <DescriptionListItem>
-                                        {item}
-                                      </DescriptionListItem>
-                                    ))}
-                                  </DescriptionList>
-                                </div>
-                              ))}
-                          </ServiceDescription>
-                        </ServiceInnerDiv>
-                      </ServiceOuterDiv>
-                    ))}
-                  </AccordionSection>
-                </ServiceList>
-              </Category>
-            </div>
-          </>
+                          {service.lists &&
+                            service.lists.map((list, index) => (
+                              <div key={index}>
+                                <DescriptionListIntro>
+                                  {list.intro}
+                                </DescriptionListIntro>
+                                <DescriptionList>
+                                  {list.items.map((item, index) => (
+                                    <DescriptionListItem key={index}>
+                                      {item}
+                                    </DescriptionListItem>
+                                  ))}
+                                </DescriptionList>
+                              </div>
+                            ))}
+                        </ServiceDescription>
+                      </div>
+                    </ServiceOuterDiv>
+                  ))}
+                </AccordionSection>
+              </ServiceList>
+            </Category>
+          </CategoryWrapper>
         )
       })}
     </>

@@ -22,7 +22,6 @@ const FooterContainer = styled.div`
 `
 const FooterCol = styled.div`
   margin: 0 0 10px;
-  /* padding: 0 15px; */
 
   .copy {
     margin-top: 10px;
