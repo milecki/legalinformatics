@@ -386,7 +386,7 @@ const Category = styled.div`
   }
 `
 
-const ServiceList = styled.ul`
+const ServiceList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
