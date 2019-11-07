@@ -6,12 +6,12 @@ import adam from "../../images/adam-hareza.jpg"
 import igor from "../../images/igor-bialowas.jpg"
 
 const Management = styled.section`
-  margin-top: -50px;
-  padding: 60px 0 50px;
+  margin-top: -3.125em;
+  padding: 3.75em 0 3.125em;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
-    margin-top: inherit;
-    padding: 80px 0 120px;
+    padding: 8.125em 0 7.5em;
   }
 `
 
@@ -25,31 +25,38 @@ const Members = styled.div`
   }
 `
 const Member = styled.div`
-  margin: 20px;
+  margin: 1.25em;
   text-align: center;
 
   @media (min-width: 768px) {
-    margin: 20px 30px 0;
+    margin: 1.25em 1.875em 0;
   }
 `
 
 const MemberPhoto = styled.img`
   border-radius: 50%;
+  width: 8.125em;
+  height: 8.125em;
+
+  @media (min-width: 768px) {
+    width: 10.75em;
+    height: 10.75em;
+  }
 `
 
 const MemberName = styled.h3`
-  margin: 10px 0;
-  font-size: 18px;
+  margin: 0.5555555556em 0;
+  font-size: 1.125em;
   font-weight: 500;
 `
 
 const MemberVocationalTitle = styled.p`
-  margin-bottom: 2px;
-  font-size: 14px;
+  margin-bottom: 0.1428571429em;
+  font-size: 0.875em;
 `
 
 const MemberRole = styled.p`
-  font-size: 14px;
+  font-size: 0.875em;
 `
 
 export default function management() {

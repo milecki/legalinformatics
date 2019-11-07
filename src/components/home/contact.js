@@ -4,40 +4,40 @@ import Container from "../globals/container"
 import SectionHeading from "../globals/sectionHeading"
 
 const ContactSection = styled.section`
-  margin-top: -50px;
-  padding: 60px 0 50px;
+  margin-top: -3.125em;
+  padding: 3.75em 0 3.125em;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
-    margin-top: inherit;
-    padding: 80px 0 120px;
+    padding: 8.125em 0 7.5em;
   }
 `
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: row;
-  max-width: 700px;
+  max-width: 43.75em;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 1.25em;
   flex-wrap: wrap;
   justify-content: space-between;
 `
 const Input = styled.input`
-  height: 34px;
+  height: 2.4285714286em;
   flex-basis: 100%;
-  margin-bottom: 15px;
-  padding: 6px 12px;
-  border: 1px solid #cccccc;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  margin-bottom: 1.0714285714em;
+  padding: 0.4285714286em 0.8571428571em;
+  border: 0.07142857143em solid #cccccc;
+  box-shadow: inset 0 0.07142857143em 0.07142857143em rgba(0, 0, 0, 0.075);
   color: #555555;
-  font-size: 14px;
+  font-size: 0.875em;
   font-family: "Aller Light", sans-serif;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
   &:focus {
     border-color: #66afe9;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 0.07142857143em 0.07142857143em rgba(0, 0, 0, 0.075),
+      0 0 0.5714285714em rgba(102, 175, 233, 0.6);
     outline: 0;
   }
 
@@ -50,32 +50,32 @@ const SuperInput = styled.input`
 `
 
 const TextArea = styled.textarea`
-  height: 184px;
+  height: 13.1428571429em;
   flex-basis: 100%;
-  margin-bottom: 15px;
-  padding: 6px 12px;
-  border: 1px solid #cccccc;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  margin-bottom: 1.0714285714em;
+  padding: 0.4285714286em 0.8571428571em;
+  border: 0.07142857143em solid #cccccc;
+  box-shadow: inset 0 0.07142857143em 0.07142857143em rgba(0, 0, 0, 0.075);
   color: #555555;
-  font-size: 14px;
+  font-size: 0.875em;
   font-family: "Aller Light", sans-serif;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
   &:focus {
     border-color: #66afe9;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 0.07142857143em 0.07142857143em rgba(0, 0, 0, 0.075),
+      0 0 0.5714285714em rgba(102, 175, 233, 0.6);
     outline: 0;
   }
 `
 const SubmitButton = styled.input`
   flex-basis: 100%;
-  padding: 10px 0;
+  padding: 0.5555555556em 0;
   background-color: #428bca;
   border-color: #357ebd;
   cursor: pointer;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 1.125em;
   font-family: "Aller Light", sans-serif;
   line-height: 1.33;
 

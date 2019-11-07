@@ -9,13 +9,13 @@ import neurosoft from "../../images/neurosoft.png"
 import szydlo from "../../images/szydlo.png"
 
 const TrustedBySection = styled.section`
-  margin-top: -50px;
-  padding: 60px 0 50px;
+  margin-top: -3.125em;
+  padding: 3.75em 0 3.125em;
   background-color: white;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
-    margin-top: inherit;
-    padding: 80px 0 120px;
+    padding: 8.125em 0 7.5em;
   }
 `
 
@@ -32,14 +32,15 @@ const Partners = styled.div`
 `
 
 const Partner = styled.img`
-  margin: 60px 0px 0px;
+  margin: 3.75em 0 0;
+  height: 3.75em;
 
   @media (min-width: 768px) {
-    margin: 40px 40px 0px;
+    margin: 2.5em 2.5em 0;
   }
 
   @media (min-width: 1136px) {
-    margin: 40px 20px 0px;
+    margin: 2.5em 1.25em 0;
   }
 
   &[alt="Kancelaria prawna Prof. Szydło i Współpracownicy"] {
@@ -59,19 +60,14 @@ export default function trustedBy() {
       <Container>
         <SectionHeading>Zaufali nam</SectionHeading>
         <Partners>
-          <Partner height="60" src={kghm} alt="KGHM" />
-          <Partner height="60" src={neurosoft} alt="Neurosoft" />
+          <Partner src={kghm} alt="KGHM" />
+          <Partner src={neurosoft} alt="Neurosoft" />
           <Partner
-            height="30"
             src={szydlo}
             alt="Kancelaria prawna Prof. Szydło i Współpracownicy"
           />
-          <Partner height="60" src={exlege} alt="Ex Lege" />
-          <Partner
-            height="60"
-            src={oficyna}
-            alt="Wydawnictwo Oficyna Prawnicza"
-          />
+          <Partner src={exlege} alt="Ex Lege" />
+          <Partner src={oficyna} alt="Wydawnictwo Oficyna Prawnicza" />
         </Partners>
       </Container>
     </TrustedBySection>

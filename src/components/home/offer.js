@@ -354,12 +354,12 @@ const OfferSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -50px;
-  padding: 60px 0 50px;
+  margin-top: -3.125em;
+  padding: 3.75em 0 3.125em;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
-    margin-top: inherit;
-    padding: 80px 0 120px;
+    padding: 8.125em 0 7.5em;
   }
 `
 const CategoryWrapper = styled.div`
@@ -367,24 +367,18 @@ const CategoryWrapper = styled.div`
 `
 
 const CategoryTitle = styled.h3`
-  padding: 40px 0 0;
+  padding: 1.75em 0 0;
   color: #1e7cc1;
-  font-size: 24px;
+  font-size: 1.5em;
   text-align: center;
 
   @media (min-width: 768px) {
-    padding: 40px 120px 0;
-    font-size: 28px;
+    padding: 1.25em 4.2857142857em 0;
+    font-size: 1.75em;
   }
 `
 
-const Category = styled.div`
-  padding: 0 0 30px;
-
-  &:last-of-type {
-    padding: 0;
-  }
-`
+const Category = styled.div``
 
 const ServiceList = styled.div`
   display: flex;
@@ -392,34 +386,36 @@ const ServiceList = styled.div`
   align-items: flex-start;
   width: 100%;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 0.9375em;
 
   @media (min-width: 768px) {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0 6.25em;
   }
 `
 
 const ServiceOuterDiv = styled.div``
 
+const ServiceInnerDiv = styled.div`
+  margin-top: 1.25em;
+`
+
 const ServiceDescription = styled.div`
-  margin: -2px 0 10px;
-  padding: 0 0 10px;
-  font-size: 14px;
+  margin: -0.1428571429em 0 0.7142857143em;
+  padding: 0 0 0.7142857143em;
+  font-size: 0.875em;
 
   @media (min-width: 768px) {
-    font-size: 16px;
+    font-size: 1em;
   }
 `
 
 const DescriptionParagraph = styled.p`
-  margin-top: 10px;
+  margin-top: 0.625em;
   line-height: 1.6;
 `
 
 const DescriptionListIntro = styled.p`
-  margin-top: 20px;
+  margin-top: 1.25em;
 `
 
 const DescriptionList = styled.ul`
@@ -427,7 +423,7 @@ const DescriptionList = styled.ul`
 `
 
 const DescriptionListItem = styled.li`
-  margin-top: 10px;
+  margin-top: 0.625em;
   list-style-type: disc;
 `
 function OfferCategories() {
@@ -447,7 +443,7 @@ function OfferCategories() {
                       isOpen={service.isOpen}
                       key={service.id}
                     >
-                      <div style={{ marginTop: "20px", marginBottom: "40px" }}>
+                      <ServiceInnerDiv>
                         <ServiceDescription>
                           {service.paragraphs &&
                             service.paragraphs.map((paragraph, index) => (
@@ -472,7 +468,7 @@ function OfferCategories() {
                               </div>
                             ))}
                         </ServiceDescription>
-                      </div>
+                      </ServiceInnerDiv>
                     </ServiceOuterDiv>
                   ))}
                 </AccordionSection>
@@ -485,7 +481,7 @@ function OfferCategories() {
   )
 }
 
-export default function offerTest() {
+export default function offer() {
   return (
     <Container>
       <OfferSection id="offer">

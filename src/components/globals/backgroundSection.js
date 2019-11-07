@@ -5,31 +5,36 @@ import PageHeading from "../globals/pageHeading"
 import PageSubheading from "../globals/pageSubheading"
 
 const StyledBackgroundImage = styled(BackgroundImage)`
-  height: 125px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 7.8125em;
+  flex-direction: column;
+  font-size: 1rem;
 
   @media screen and (min-width: 640px) {
-    height: 250px;
+    height: 15.625em;
   }
   @media screen and (min-width: 768px) {
-    height: 300px;
+    height: 18.75em;
   }
   @media screen and (min-width: 992px) {
-    height: 450px;
+    height: 21.875em;
+  }
+
+  @media (min-width: 1600px) {
+    height: 28.125em;
   }
 
   &.hero {
-    height: 250px;
+    height: 15.625em;
 
     @media screen and (min-width: 768px) {
-      height: 350px;
+      height: 21.875em;
     }
 
     @media screen and (min-width: 992px) {
-      height: 450px;
+      height: 28.125em;
     }
   }
 `

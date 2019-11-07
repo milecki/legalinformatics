@@ -6,9 +6,10 @@ const OuterDiv = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  margin-bottom: 0.625em;
+  margin-top: 1.875em;
   transition: color 0.2s ease-in-out;
+  font-size: 1rem;
 
   &:hover {
     color: #1e7cc1;
@@ -16,22 +17,22 @@ const OuterDiv = styled.div`
 `
 
 const ServiceIcon = styled.img`
-  width: 45px;
-  height: 45px;
-  margin-right: 14px;
+  width: 2.8125em;
+  height: 2.8125em;
+  margin-right: 0.875em;
 `
 
 const ServiceName = styled.h4`
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: 20px;
+    font-size: 1.25em;
   }
 `
 const ArrowIcon = styled.div`
-  margin-left: 10px;
-  font-size: 12px;
+  margin-left: 0.8333333333em;
+  font-size: 0.75em;
 
   span {
     display: block;
@@ -77,7 +78,7 @@ class Accordion extends Component {
         <OuterDiv onClick={onClick} key={id}>
           <ServiceIcon src={imgSrc} alt=""></ServiceIcon>
           <ServiceName>{label}</ServiceName>
-          <ArrowIcon>
+          <ArrowIcon isOpen={isOpen}>
             <span>&#9660;</span>
           </ArrowIcon>
         </OuterDiv>

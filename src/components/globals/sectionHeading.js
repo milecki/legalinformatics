@@ -5,8 +5,9 @@ const StyledDiv = styled.div`
   position: relative;
   text-align: center;
   width: 80%;
-  height: 2px;
-  margin: 50px auto 30px;
+  height: 0.125em;
+  margin: 3.125em auto 1.875em;
+  font-size: 1rem;
   background: linear-gradient(
     to right,
     #ffffff 0%,
@@ -17,22 +18,23 @@ const StyledDiv = styled.div`
     #299cd7 75%,
     #ffffff 100%
   );
+
   @media (min-width: 768px) {
-    margin: 30px auto 50px;
+    margin: 1.875em auto 3.125em;
   }
 `
 
 const StyledSpan = styled.span`
   position: relative;
   display: inline-block;
-  padding: 0 25px;
+  padding: 0 1.5625em;
   background-color: #ffffff;
-  top: -13px;
+  top: -0.8125em;
   left: initial;
 `
 
 const StyledH2 = styled.h2`
-  font-size: 22px;
+  font-size: 1.375em;
 `
 
 export default function sectionHeading(props) {

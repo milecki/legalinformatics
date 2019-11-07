@@ -3,9 +3,10 @@ import styled from "styled-components"
 import Container from "../globals/container"
 
 const Footer = styled.footer`
-  border-top: 1px solid #e7e7e7;
-  padding: 20px 0;
+  padding: 1.25em 0;
+  border-top: 0.0625em solid #e7e7e7;
   background-color: #f8f8f8;
+  font-size: 1rem;
 `
 const FooterContainer = styled.div`
   margin: 0 auto;
@@ -17,26 +18,25 @@ const FooterContainer = styled.div`
     grid-template-rows: 2;
     justify-items: center;
     justify-content: center;
-    grid-gap: 30px;
+    grid-gap: 1.875em;
   }
 `
 const FooterCol = styled.div`
-  margin: 0 0 10px;
-
-  .copy {
-    margin-top: 10px;
-  }
+  margin: 0 0 0.625em;
 `
 
 const FooterColHeading = styled.h3`
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 700;
   line-height: 1.44;
 `
 
 const FooterParagraph = styled.p`
-  font-size: 12px;
+  font-size: 0.75em;
   line-height: 1.44;
+  &.copy {
+    margin-top: 0.83333em;
+  }
 `
 
 const FooterLink = styled.a`

@@ -6,6 +6,7 @@ const LinkList = styled.ul`
   height: ${props => props.ulHeight};
   overflow: hidden;
   transition: height 0.2s ease-in-out;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
     display: flex;
@@ -17,11 +18,11 @@ const LinkList = styled.ul`
 const StyledLink = styled(Link)`
   display: block;
   width: 100%;
-  padding: 10px 15px;
-  margin-right: 30px;
-  color: #777;
-  font-size: 0.875rem;
-  letter-spacing: 1px;
+  padding: 0.7142857143em 1.0714285714em;
+  margin-right: 2.1428571429em;
+  color: #777777;
+  font-size: 0.875em;
+  letter-spacing: 0.07142857143em;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.2s ease-in, background-color 0.2s ease-in;
@@ -32,8 +33,8 @@ const StyledLink = styled(Link)`
   }
 
   @media (min-width: 768px) {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 1.0714285714em;
+    padding-bottom: 1.0714285714em;
     text-align: center;
 
     &:hover {
@@ -45,7 +46,7 @@ const StyledLink = styled(Link)`
 class NavLinks extends Component {
   render() {
     return (
-      <LinkList ulHeight={this.props.navbarOpen ? "156px" : 0}>
+      <LinkList ulHeight={this.props.navbarOpen ? "10.375em" : 0}>
         <li>
           <StyledLink to="/#offer">Oferta</StyledLink>
         </li>

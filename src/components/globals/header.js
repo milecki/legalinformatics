@@ -9,10 +9,10 @@ const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: 63.5px;
-  margin-bottom: 1.45rem;
+  min-height: 3.96875em;
   background: #fff;
-  box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.33);
+  box-shadow: 0 0.0625em 0.625em 0 rgba(50, 50, 50, 0.33);
+  font-size: 1rem;
   z-index: 2;
 `
 const NavContainer = styled.div`

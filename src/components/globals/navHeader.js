@@ -8,13 +8,14 @@ const StyledNavHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1rem;
 `
 
 const Logo = styled.img`
-  display: block;
-  width: 90px;
   box-sizing: content-box;
-  padding: 10px 15px;
+  display: block;
+  width: 5.625em;
+  padding: 0.625em 0.9375em;
 `
 
 const NavHeader = props => (

@@ -5,12 +5,13 @@ const MenuTogglerIcon = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 34px;
-  margin-right: 15px;
-  padding: 0 7px;
+  height: 2.125em;
+  margin-right: 0.9375em;
+  padding: 0 0.4375em;
+  font-size: 1rem;
   cursor: pointer;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625em solid #dddddd;
+  border-radius: 0.25em;
   transition: all 0.2s ease-in;
 
   &:hover {
@@ -24,9 +25,9 @@ const MenuTogglerIcon = styled.div`
 `
 
 const Bar = styled.div`
-  width: 22px;
-  height: 2px;
-  margin-bottom: 4px;
+  width: 1.375em;
+  height: 0.125em;
+  margin-bottom: 0.25em;
   background-color: #888888;
 
   &:last-child {
