@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Legal Informatics`,
-    description: `Legal Informatics website`,
+    description: `Łączymy prawo i IT. Przygotowujemy analizy i opinie prawne, wdrażamy systemy teleinformatyczne dla wymiaru sprawiedliwości, samorządów zawodowych i biznesu.`,
     author: `milecki`,
     siteUrl: `https://legalinformatics.pl`,
   },
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Legal Informatics Website`,
-        short_name: `Legal`,
+        name: `Legal Informatics`,
+        short_name: `LI`,
         start_url: `/`,
         background_color: `#0D3C71`,
         theme_color: `#0D3C71`,
