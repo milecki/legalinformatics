@@ -91,7 +91,7 @@ export default function contact() {
       <ContactSection id="contact">
         <SectionHeading>Kontakt</SectionHeading>
         <ContactForm
-          action="https://formspree.io/michal@kulecki.me"
+          action="https://formspree.io/biuro@legalinformatics.pl"
           method="post"
         >
           <input type="hidden" name="_language" value="pl" />
