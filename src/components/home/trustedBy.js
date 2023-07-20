@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Container from "../globals/container"
 import SectionHeading from "../globals/sectionHeading"
 import oficyna from "../../images/oficyna.png"
-import kghm from "../../images/kghm.png"
 import exlege from "../../images/exlege.png"
 import neurosoft from "../../images/neurosoft.png"
 import szydlo from "../../images/szydlo.png"
@@ -60,7 +59,6 @@ export default function trustedBy() {
       <Container>
         <SectionHeading>Zaufali nam</SectionHeading>
         <Partners>
-          <Partner src={kghm} alt="KGHM" />
           <Partner src={neurosoft} alt="Neurosoft" />
           <Partner
             src={szydlo}
